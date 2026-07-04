@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DecodeLabs | ML Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="terminal-container">
+        <header>
+            <h1>DATA CLASSIFIER // PIPELINE</h1>
+            <p>Dataset: Custom Upload | Algorithm: K-Nearest Neighbors</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <label for="csv-file" class="file-label">Upload CSV file</label>
+                <input type="file" id="csv-file" accept=".csv" class="file-input">
+                <button id="analyze-btn" class="glow-button">INITIALIZE ANALYSIS</button>
+            </div>
+            
+            <div id="loading-spinner" class="hidden">Processing Advanced Diagnostics...</div>
+
+            <div id="results-dashboard" class="hidden">
+                
+                <div class="data-card">
+                    <h2>Dataset Overview</h2>
+                    <div class="stats-text">
+                        <span class="highlight">Total Samples:</span> <span id="row-count">--</span><br>
+                        <span class="highlight">Input Features:</span> <span id="feature-count">--</span>
+                    </div>
+                    <div class="subtext distribution-label">Target Class Distribution:</div>
+                    <div id="class-dist-box" class="distribution-box">
+                        </div>
+                </div>
+
+                <div class="data-card">
+                    <h2>Model Performance</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-label">F1 Score</div>
+                            <div class="metric-value-small" id="f1-display">--</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">Accuracy</div>
+                            <div class="metric-value-small" id="acc-display">--</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">Precision</div>
+                            <div class="metric-value-small" id="prec-display">--</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-label">Recall</div>
+                            <div class="metric-value-small" id="rec-display">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-card matrix-card">
+                    <h2>Confusion Matrix</h2>
+                    <div id="matrix-display" class="matrix-grid">
+                        </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

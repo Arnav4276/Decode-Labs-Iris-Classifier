@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box; margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace;
+}
+body {
+    background-color: #0B0C10; color: #c5c6c7; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px;
+}
+.terminal-container {
+    width: 100%; max-width: 900px; background: rgba(31, 40, 51, 0.5); border: 1px solid rgba(102, 252, 241, 0.2); border-radius: 12px; padding: 40px; box-shadow: 0 0 20px rgba(102, 252, 241, 0.1);
+}
+header h1 { color: #66FCF1; font-size: 1.8rem; margin-bottom: 5px; text-shadow: 0 0 10px rgba(102, 252, 241, 0.3); }
+header p { font-size: 0.9rem; margin-bottom: 30px; color: #8c92ac; }
+
+/* Upload UI */
+.upload-section { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+.file-label { font-size: 0.9rem; color: #8c92ac; }
+.file-input { background: rgba(11, 12, 16, 0.8); color: #66FCF1; padding: 15px; border: 1px dashed #66FCF1; border-radius: 6px; cursor: pointer; outline: none; }
+.file-input::file-selector-button { background: #66FCF1; color: #0B0C10; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; margin-right: 15px; transition: all 0.3s ease; }
+.file-input::file-selector-button:hover { box-shadow: 0 0 10px #66FCF1; }
+.glow-button { background: transparent; color: #66FCF1; border: 2px solid #66FCF1; padding: 15px 30px; font-size: 1.1rem; font-weight: bold; cursor: pointer; border-radius: 6px; transition: all 0.3s ease; width: 100%; }
+.glow-button:hover { background: #66FCF1; color: #0B0C10; box-shadow: 0 0 15px #66FCF1; }
+
+.hidden { display: none !important; }
+#loading-spinner { text-align: center; color: #C525FF; font-size: 1.2rem; margin-bottom: 20px; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+
+/* Dynamic Grid */
+#results-dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+.matrix-card { grid-column: 1 / -1; } /* Makes the matrix span the full bottom width */
+
+/* Cards & Text */
+.data-card { background: rgba(11, 12, 16, 0.8); border-left: 4px solid #C525FF; padding: 20px; border-radius: 8px; }
+.data-card h2 { font-size: 1.1rem; margin-bottom: 15px; color: white; border-bottom: 1px solid #1f2833; padding-bottom: 10px; }
+.highlight { color: #66FCF1; font-weight: bold; }
+.stats-text { font-size: 1.1rem; line-height: 1.6; }
+.subtext { font-size: 0.8rem; color: #8c92ac; }
+.distribution-label { margin-top: 15px; }
+
+/* Distributions Box */
+.distribution-box { background: #0B0C10; padding: 10px; border-radius: 4px; margin-top: 5px; font-size: 0.95rem; color: #C525FF; border: 1px solid #1f2833; }
+.dist-item { display: flex; justify-content: space-between; margin-bottom: 4px; }
+
+/* Extended Metrics Grid */
+.metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.metric-item { background: #0B0C10; padding: 10px; border-radius: 6px; text-align: center; border: 1px solid #1f2833; }
+.metric-label { font-size: 0.8rem; color: #8c92ac; margin-bottom: 5px; text-transform: uppercase; }
+.metric-value-small { font-size: 1.8rem; color: #C525FF; font-weight: bold; }
+
+.matrix-grid { font-size: 1.2rem; color: #66FCF1; white-space: pre-wrap; text-align: center; letter-spacing: 2px; }
